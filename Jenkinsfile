@@ -13,7 +13,26 @@ pipeline {
       }
     }
 
+    stage('Restore') {
+        agent {
+          docker {
+            image 'node:10-alpine'
+            args '-p 3000:3000'
+          }
+        }
+        steps {
+            sh 'npm install'
+        }
+    }
+
+    stage('Build') {
+        steps {
+          sh 'npm run build'
+        }
+    }
+
     stage('Build image') { 
+      agent none
       steps {
         script {
           def apitestimage = docker.build("gauravtalele/angular-jenkins-cicd:${env.BUILD_ID}")

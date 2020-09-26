@@ -33,6 +33,8 @@ Use SSL: true
 SMTP Port: 465
 Charset: utf-8
 
+gau
+
 agent {
 docker {
 image 'node:10-alpine'
