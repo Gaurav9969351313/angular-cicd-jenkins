@@ -1,6 +1,7 @@
 https://github.com/petenorth/angular-5-example/blob/master/jenkins/Jenkinsfile
 
 https://github.com/hms-dbmi/avillachlab-jenkins/blob/master/jenkins-docker/Dockerfile
+https://medium.com/@karthi.net/docker-tutorial-build-docker-images-using-jenkins-d2880e65b74
 
 Step 1: docker-compose up -d
 Step 2: docker exec -it jenkins bash
@@ -27,3 +28,22 @@ User Name: gauravtalele@gmail.com
 password: <Email Password>
 Use SSL: true
 SMTP Port: 465
+Charset: utf-8
+
+    stage('Clean Workspace'){
+        steps {
+            cleanWs()
+        }
+    }
+
+stage('Restore') {
+steps {
+sh 'npm install'
+}
+}
+
+    stage('Build') {
+        steps {
+          sh 'npm run build'
+        }
+    }

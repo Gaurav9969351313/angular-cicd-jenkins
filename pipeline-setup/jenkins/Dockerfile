@@ -15,6 +15,10 @@ RUN add-apt-repository \
     stable"  
 RUN apt-get update
 RUN apt-get -y install docker-ce
+RUN apt-get -y install python3-pip
+
+RUN pip3 install --no-input awscli --upgrade
 # COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
+# RUN `/usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt` || echo "Some errors occurred during plugin installation."
 
 USER jenkins
