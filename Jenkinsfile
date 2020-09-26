@@ -18,12 +18,6 @@ pipeline {
         checkout scm
       }
     }
-
-    stage ('build docker image'){
-      steps{
-        docker image build -t angular-cicd-gt .
-      }
-    }
     
   }
 
