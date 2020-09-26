@@ -19,9 +19,8 @@ pipeline {
     }
 
     stage('Build image') { 
-      agent any
       steps {
-        sh 'docker build -t gauravtalele/angular-jenkins-cicd .'
+        def customImage = docker.build("gauravtalele/angular-jenkins-cicd:${env.BUILD_ID}")
       }
     }
 
