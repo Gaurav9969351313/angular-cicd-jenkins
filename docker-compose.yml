@@ -5,6 +5,7 @@ services:
     build: ./pipeline-setup/jenkins
     user: root
     privileged: true
+    restart: always
     ports:
       - 8081:8080
       - 50000:50000
