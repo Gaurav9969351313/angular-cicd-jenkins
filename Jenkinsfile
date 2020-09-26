@@ -20,7 +20,7 @@ pipeline {
 
     stage('Build image') { 
       steps {
-        def customImage = docker.build("gauravtalele/angular-jenkins-cicd:${env.BUILD_ID}")
+        docker.build("gauravtalele/angular-jenkins-cicd:${env.BUILD_ID}")
       }
     }
 
