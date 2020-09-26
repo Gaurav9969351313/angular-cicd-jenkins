@@ -4,6 +4,8 @@ https://github.com/hms-dbmi/avillachlab-jenkins/blob/master/jenkins-docker/Docke
 https://medium.com/@karthi.net/docker-tutorial-build-docker-images-using-jenkins-d2880e65b74
 https://tutorials.releaseworksacademy.com/learn/building-your-first-docker-image-with-jenkins-2-guide-for-developers
 
+https://www.liatrio.com/blog/building-with-docker-using-jenkins-pipelines
+
 Step 1: docker-compose up -d
 Step 2: docker exec -it jenkins bash
 Step 3: docker exec /var/jenkins_home/secrets/initialAdminPassword
@@ -62,3 +64,13 @@ args '-p 3000:3000'
 
 docker image build -t gauravtalele/angular-jenkins-cicd .
 docker container run -d -p 8085:80 gauravtalele/angular-jenkins-cicd
+
+stage('Build and push') {
+steps {
+script {
+def apitestimage = docker.build("gauravtalele/angular-jenkins-cicd:\${env.BUILD_ID}")  
+ }
+}
+}
+
+# this is correct
