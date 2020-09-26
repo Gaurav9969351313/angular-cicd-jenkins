@@ -8,10 +8,17 @@ pipeline {
     }
 
   stages {
+    
       
     stage('Clean Workspace'){
       steps {
         cleanWs()
+      }
+    }
+
+    stage ('checkout'){
+      steps{
+        checkout scm
       }
     }
 

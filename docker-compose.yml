@@ -12,3 +12,4 @@ services:
     volumes:
       - ./volumes/data:/var/jenkins_home
       - ./volumes/artifacts:/var/jenkins_artifacts
+      - /var/run/docker.sock:/var/run/docker.sock
