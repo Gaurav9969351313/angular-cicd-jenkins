@@ -21,7 +21,9 @@ Click on Add (Dropdown will open) ==> Select Jenkins ==> Add Git Credentials
 then add git repo url
 Step 8: save
 Step 9: Setting Up Email Notifications
-Manage Jenkins ==> Configure System ==> E-mail Notification
+Manage Jenkins ==> Configure System ==> E-mail Notification & Extended E-mail Notification
+configure ith same credentials
+
 SMTP Server: smtp.gmail.com
 Use SMTP Authentication: Check this box (true)
 User Name: gauravtalele@gmail.com
@@ -36,11 +38,11 @@ Charset: utf-8
         }
     }
 
-stage('Restore') {
-steps {
-sh 'npm install'
-}
-}
+    stage('Restore') {
+        steps {
+            sh 'npm install'
+        }
+    }
 
     stage('Build') {
         steps {
