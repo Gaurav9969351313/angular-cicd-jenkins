@@ -20,7 +20,9 @@ pipeline {
 
     stage('Build image') { 
       steps {
-        docker.build("gauravtalele/angular-jenkins-cicd:${env.BUILD_ID}")
+        script {
+          def apitestimage = docker.build("gauravtalele/angular-jenkins-cicd:${env.BUILD_ID}")
+        }
       }
     }
 
