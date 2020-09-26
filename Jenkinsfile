@@ -12,29 +12,19 @@ pipeline {
   }
 
   stages {
-    def app
-
     stage ('checkout'){
       steps{
         checkout scm
       }
     }
 
-    stage('Building our image') { 
-      script{
-        app = docker.build("gauravtalele/angular-jenkins-cicd")
+    stage('Build image') { 
+      agent any
+      steps {
+        sh 'docker build -t gauravtalele/angular-jenkins-cicd .'
       }
     }
 
-    stage('Deploy our image') { 
-      script{
-          docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_creds') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
-        }
-      }
-    }
-    
   }
 
    post {
