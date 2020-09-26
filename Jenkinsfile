@@ -21,15 +21,20 @@ pipeline {
     }
 
     stage('Building our image') { 
-      app = docker.build("gauravtalele/angular-jenkins-cicd")
+      script{
+        app = docker.build("gauravtalele/angular-jenkins-cicd")
+      }
     }
 
     stage('Deploy our image') { 
-      docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_creds') {
-        app.push("${env.BUILD_NUMBER}")
-        app.push("latest")
+      script{
+          docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_creds') {
+            app.push("${env.BUILD_NUMBER}")
+            app.push("latest")
+        }
       }
     }
+    
   }
 
    post {
