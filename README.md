@@ -92,10 +92,11 @@ heroku logs --tail -a angular-heroku-app-1102
 heroku apps 
 heroku open
 heroku ps -a angular-heroku-app-1102
-
+heroku authorizations:create --description="azure cd token" --short
+ heroku authorizations
 
 =============================================================================
 https://itnext.io/how-to-deploy-angular-application-to-heroku-1d56e09c5147
-=======
+=============================================================================
 
 # this is correct
