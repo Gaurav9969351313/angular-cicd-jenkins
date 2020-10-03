@@ -93,10 +93,14 @@ heroku apps
 heroku open
 heroku ps -a angular-heroku-app-1102
 heroku authorizations:create --description="azure cd token" --short
- heroku authorizations
+heroku authorizations
 
 =============================================================================
 https://itnext.io/how-to-deploy-angular-application-to-heroku-1d56e09c5147
 =============================================================================
 
-# this is correct
+heroku container:push web --app nginx-1102
+heroku container:release web --app nginx-1102
+heroku ps:scale web=1 --app=nginx-1102
+heroku open --app nginx-1102
+heroku logs --tail -a nginx-1102
