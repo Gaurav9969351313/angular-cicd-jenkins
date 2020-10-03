@@ -72,8 +72,6 @@ def apitestimage = docker.build("gauravtalele/angular-jenkins-cicd:\${env.BUILD_
  }
 }
 }
-<<<<<<< HEAD
-=========================
 # this is correct
 Heroku
 
@@ -101,4 +99,3 @@ https://itnext.io/how-to-deploy-angular-application-to-heroku-1d56e09c5147
 =======
 
 # this is correct
->>>>>>> aed3f08b72e80e41524301d39fe88040492a8a76
