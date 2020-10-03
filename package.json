@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-<<<<<<< HEAD
     "start": "node server.js",
     "build": "ng build --prod",
     "test": "ng test",
@@ -14,21 +13,11 @@
   "engines": {
     "node": "12.18.2",
     "npm": "6.14.5"
-=======
-    "start": "ng serve",
-    "build": "ng build --prod",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
->>>>>>> aed3f08b72e80e41524301d39fe88040492a8a76
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.0.0",
-<<<<<<< HEAD
     "@angular/cli": "10.1.2",
-=======
->>>>>>> aed3f08b72e80e41524301d39fe88040492a8a76
     "@angular/common": "~7.0.0",
     "@angular/compiler": "~7.0.0",
     "@angular/core": "~7.0.0",
@@ -38,14 +27,10 @@
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
     "core-js": "^2.5.4",
-<<<<<<< HEAD
     "express": "^4.17.1",
     "path": "^0.12.7",
     "rxjs": "~6.3.3",
     "typescript": "~3.1.6",
-=======
-    "rxjs": "~6.3.3",
->>>>>>> aed3f08b72e80e41524301d39fe88040492a8a76
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
